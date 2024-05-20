@@ -42,22 +42,24 @@ class Server:
         Return hypermedia pagination information
         with deletion resilience.
         """
-        assert isinstance(index, int) and index >= 0
+        indexed_data = self.indexed_dataset()
+        total_items = len(indexed_data)
+
+        # Ensure the index is within the valid range
+        assert isinstance(index, int) and 0 <= index < total_items
         assert isinstance(page_size, int) and page_size > 0
 
-        indexed_data = self.indexed_dataset()
         data = []
-        current_index = index
         next_index = index
 
-        while len(data) < page_size and next_index < len(indexed_data):
+        while len(data) < page_size and next_index < total_items:
             if next_index in indexed_data:
                 data.append(indexed_data[next_index])
             next_index += 1
 
         return {
             "index": index,
-            "next_index": next_index,
+            "data": data,
             "page_size": page_size,
-            "data": data
+            "next_index": next_index
         }
