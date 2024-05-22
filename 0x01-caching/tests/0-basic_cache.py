@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 A class BasicCache that inherits from BaseCaching and is a caching system
 """
@@ -24,6 +24,5 @@ class BasicCache(BaseCaching):
         return None
 
 
-# Example usage
 if __name__ == "__main__":
     basic_cache = BasicCache()
