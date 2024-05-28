@@ -1,0 +1,14 @@
+# French translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "home_title"
+msgstr "Bienvenue chez Holberton"
+
+msgid "home_header"
+msgstr "Bonjour monde!"
